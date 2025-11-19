@@ -1,78 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="new.css" />
-  <title>SocialBook - News Feed</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Social Book</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="main-header">
-    <span class="logo">SOCIALBOOK</span>
-    <nav>
-      <a href="home.html">Home</a>
+    <header class="header">
+    <div class="logo">SocialBook</div>
+    <nav class="top-nav">
+      <a href="index.html">Home</a>
+      <a href="feed.html">Feed</a>
       <a href="profile.html">Profile</a>
-      <a href="feed.html" class="active">News Feed</a>
-      <a href="pages.html">Pages</a>
-      <a href="groups.html">Groups</a>
       <a href="friends.html">Friends</a>
+      <a href="messages.html">Messages</a>
+      <a href="settings.html">Settings</a>
     </nav>
-    <div class="search-bar"><input type="text" placeholder="Search SocialBook..." /></div>
   </header>
-  <div class="container">
-    <aside class="sidebar">
-      <div class="profile-box">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="avatar">
-        <span class="username">Amit Deb</span>
-      </div>
-      <ul class="side-menu">
-        <li><a href="profile.html">👤 Profile</a></li>
-        <li><a href="feed.html" class="active">📰 News Feed</a></li>
-        <li><a href="pages.html">📄 Pages</a></li>
-        <li><a href="groups.html">👥 Groups</a></li>
-        <li><a href="friends.html">👫 Friends</a></li>
+      <main class="page-wrapper three-col">
+    <aside class="card">
+      <h3>Shortcuts</h3>
+      <ul>
+        <li>News Feed</li>
+        <li>Groups</li>
+        <li>Events</li>
+        <li>Pages</li>
       </ul>
     </aside>
-    <main class="main-content">
-      <h2>News Feed</h2>
-      <div class="create-post">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="avatar-sm" alt="Profile">
-        <textarea placeholder="What's on your mind?"></textarea>
+
+    <section>
+      <div class="card">
+        <h3>Create Post</h3>
+        <textarea rows="3" placeholder="What's on your mind?"></textarea>
         <button>Post</button>
       </div>
-      <div class="card">
-        <div class="card-header">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" class="avatar-sm" alt="Profile">
-          <span class="card-author">Rani Mukherjee</span>
-          <span class="card-time">· 4 hrs ago</span>
-        </div>
-        <div class="card-body">
-          <p>Had an amazing day out with friends! 🌞✨ #memories</p>
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=500&q=80" alt="Post Image" class="card-img">
-        </div>
-        <div class="card-actions">
-          <button>👍 Like</button>
-          <button>💬 Comment</button>
-          <button>🔗 Share</button>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header">
-          <img src="https://randomuser.me/api/portraits/men/63.jpg" class="avatar-sm" alt="Profile">
-          <span class="card-author">Arup Pegu</span>
-          <span class="card-time">· 2 hrs ago</span>
-        </div>
-        <div class="card-body">
-          <p>Check out my new sketch!</p>
-          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=500&q=80" alt="Sketch" class="card-img">
-        </div>
-        <div class="card-actions">
-          <button>👍 Like</button>
-          <button>💬 Comment</button>
-          <button>🔗 Share</button>
-        </div>
-      </div>
-    </main>
-  </div>
+
+      <article class="card">
+        <h4>Ankit • <span style="color:black;font-size:15px;">2 hrs ago</span></h4>
+        <p>Enjoying my time on SocialBook! Loving this new look.</p>
+      </article>
+
+      <article class="card">
+        <h4>Shivam • <span style="color:black;font-size:15px">5 hrs ago</span></h4>
+        <p>Just started learning HTML and CSS. This SocialBook project is fun!</p>
+      </article>
+    </section>
+
+    <aside class="card">
+      <h3>Friend Suggestions</h3>
+      <p>People you may know</p>
+      <p>Ravi Kumar <button class="btn">Add Friend</button></p>
+      <p>Surya kumar <button class="btn">Add Friend</button></p>
+    </aside>
+  </main>
+  <footer class="footer">
+    <p>© 2025 SocialBook • A simple Facebook-style project by [Sankalp Tripathi]</p>
+  </footer>
+
 </body>
 </html>

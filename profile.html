@@ -1,53 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="new.css" />
-  <title>SocialBook - Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Social Book</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="main-header">
-    <span class="logo">SOCIALBOOK</span>
-    <nav>
-      <a href="home.html">Home</a>
-      <a href="profile.html" class="active">Profile</a>
-      <a href="feed.html">News Feed</a>
-      <a href="pages.html">Pages</a>
-      <a href="groups.html">Groups</a>
+    <header class="header">
+    <div class="logo">SocialBook</div>
+    <nav class="top-nav">
+      <a href="index.html">Home</a>
+      <a href="feed.html">Feed</a>
+      <a href="profile.html">Profile</a>
       <a href="friends.html">Friends</a>
+      <a href="messages.html">Messages</a>
+      <a href="settings.html">Settings</a>
     </nav>
-    <div class="search-bar"><input type="text" placeholder="Search SocialBook..." /></div>
   </header>
-  <div class="container">
-    <aside class="sidebar">
-      <div class="profile-box">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="avatar">
-        <span class="username">Amit Deb</span>
+      <main class="page-wrapper">
+    <section class="card">
+      <div class="two-col">
+        <div>
+          <div style="width:120px;height:120px;border-radius:50%;background:#ddd;"></div>
+        </div>
+        <div>
+          <h2>Your Name</h2>
+          <p style="color:#65676b;">100 friends • 10 mutual</p>
+          <button>Edit Profile</button>
+          <button class="btn" style="background:#2aa2b7;">Add to Story</button>
+        </div>
       </div>
-      <ul class="side-menu">
-        <li><a href="profile.html" class="active">👤 Profile</a></li>
-        <li><a href="feed.html">📰 News Feed</a></li>
-        <li><a href="pages.html">📄 Pages</a></li>
-        <li><a href="groups.html">👥 Groups</a></li>
-        <li><a href="friends.html">👫 Friends</a></li>
-      </ul>
-    </aside>
-    <main class="main-content">
-      <h2>Your Profile</h2>
+    </section>
+
+    <section class="two-col">
       <div class="card">
-        <div class="card-header">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" class="avatar-sm" alt="Profile">
-          <span class="card-author">Amit Deb</span>
-          <span class="card-time">Joined 2022</span>
-        </div>
-        <div class="card-body">
-          <p>Email: amitdeb@email.com</p>
-          <p>Location: India</p>
-          <p>About: SocialBook capstone project creator!</p>
-        </div>
+        <h3>Intro</h3>
+        <p>Student • Loves coding and design</p>
+        <p>Lives in Prayagraj</p>
+        <p>From Uttar Pradesh</p>
       </div>
-    </main>
-  </div>
+
+      <div class="card">
+        <h3>Photos</h3>
+        <p>Add your photo here!</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Posts</h3>
+      <article>
+        <h4>Your Name</h4>
+        <p>This is your first post on SocialBook profile page.</p>
+      </article>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>© 2025 SocialBook • A simple Facebook-style project by [Sankalp Tripathi]</p>
+  </footer>
+
 </body>
 </html>
