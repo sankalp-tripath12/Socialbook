@@ -3,64 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Social Book</title>
-  <link rel="stylesheet" href="style.css" />
+    <title>Social Book - Profile</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        
+        body.dark-mode {
+            background-color: #18191a;
+            color: #e4e6eb;
+        }
+        body.dark-mode .card {
+            background-color: #242526;
+        }
+        body.dark-mode button {
+            background-color: #3a3b3c;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
-    <div class="logo">SocialBook</div>
-    <nav class="top-nav">
-      <a href="index.html">Home</a>
-      <a href="feed.html">Feed</a>
-      <a href="profile.html">Profile</a>
-      <a href="friends.html">Friends</a>
-      <a href="messages.html">Messages</a>
-      <a href="settings.html">Settings</a>
-    </nav>
-  </header>
-      <main class="page-wrapper">
-    <section class="card">
-      <div class="two-col">
-        <div>
-          <div style="width:120px;height:120px;border-radius:50%;background:#ddd;"></div>
-        </div>
-        <div>
-          <h2>Your Name</h2>
-          <p style="color:#65676b;">100 friends • 10 mutual</p>
-          <button>Edit Profile</button>
-          <button class="btn" style="background:#2aa2b7;">Add to Story</button>
-        </div>
-      </div>
-    </section>
+        <div class="logo">SocialBook</div>
+        <nav class="top-nav">
+            <a href="index.html">Home</a>
+            <a href="feed.html">Feed</a>
+            <a href="profile.html">Profile</a>
+            <a href="friends.html">Friends</a>
+            <a href="messages.html">Messages</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+    </header>
 
-    <section class="two-col">
-      <div class="card">
-        <h3>Intro</h3>
-        <p>Student • Loves coding and design</p>
-        <p>Lives in Prayagraj</p>
-        <p>From Uttar Pradesh</p>
-      </div>
+    <main class="page-wrapper">
+        <section class="card">
+            <div class="two-col">
+                <div>
+                    <div style="width:120px;height:120px;border-radius:50%;background:#dddddd;"></div>
+                </div>
+                <div>
+                    <h2>Your Name</h2>
+                    <p style="color:#65676b;">100 friends - 10 mutual</p>
+                    <button id="editProfileBtn">Edit Profile</button>
+                    <button id="addStoryBtn" class="btn" style="background:#2aa2b7;">Add to Story</button>
+                </div>
+            </div>
+        </section>
 
-      <div class="card">
-        <h3>Photos</h3>
-        <p>Add your photo here!</p>
-      </div>
-    </section>
+        <section class="two-col">
+            <div class="card">
+                <h3>Intro</h3>
+                <p>Student • Loves coding and design</p>
+                <p>Lives in Prayagraj</p>
+                <p>From Uttar Pradesh</p>
+            </div>
 
-    <section class="card">
-      <h3>Posts</h3>
-      <article>
-        <h4>Your Name</h4>
-        <p>This is your first post on SocialBook profile page.</p>
-      </article>
-    </section>
-  </main>
-  <footer class="footer">
-    <p>© 2025 SocialBook • A simple Facebook-style project by [Sankalp Tripathi]</p>
-  </footer>
+            <div class="card">
+                <h3>Photos</h3>
+                <p>Add your photo here!</p>
+            </div>
+        </section>
 
+        <button id="darkModeBtn" style="margin:1rem;">Toggle Dark Mode</button>
+
+        <section class="card">
+            <h3>Posts</h3>
+            <article>
+                <h4>Your Name</h4>
+                <p>This is your first post on SocialBook profile page.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>2025 SocialBook - A simple Facebook-style project by [Sankalp Tripathi]</p>
+    </footer>
+
+    
+    <script>
+        // Dark Mode
+        const darkModeBtn = document.getElementById('darkModeBtn');
+        darkModeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Edit Profile 
+        const editProfileBtn = document.getElementById('editProfileBtn');
+        editProfileBtn.addEventListener('click', () => {
+            alert('Edit Profile clicked!');
+        });
+
+        // Add to Story button
+        const addStoryBtn = document.getElementById('addStoryBtn');
+        addStoryBtn.addEventListener('click', () => {
+            alert('Story Added!');
+        });
+    </script>
 </body>
 </html>
