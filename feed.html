@@ -72,9 +72,9 @@
         <p>2025 SocialBook - A simple Facebook-style project by [Sankalp Tripathi]</p>
     </footer>
 
-    <!-- Inline JS -->
+    
     <script>
-      // Select all posts
+      
       const posts = document.querySelectorAll('.post');
 
       posts.forEach(post => {
@@ -84,14 +84,14 @@
           const commentInput = post.querySelector('.commentInput');
           const commentList = post.querySelector('.commentList');
 
-          // Like button functionality
+          // Like button
           let liked = false;
           likeBtn.addEventListener('click', () => {
               liked = !liked;
               likeText.textContent = liked ? 'You liked this post' : '';
           });
 
-          // Comment button functionality
+          // Comment button
           commentBtn.addEventListener('click', () => {
               const comment = commentInput.value.trim();
               if(comment) {
@@ -179,9 +179,8 @@
         <p>2025 SocialBook - A simple Facebook-style project by [Sankalp Tripathi]</p>
     </footer>
 
-    <!-- Inline JS -->
+    
     <script>
-      // Select all posts
       const posts = document.querySelectorAll('.post');
 
       posts.forEach(post => {
@@ -191,14 +190,14 @@
           const commentInput = post.querySelector('.commentInput');
           const commentList = post.querySelector('.commentList');
 
-          // Like button functionality
+          // Like button
           let liked = false;
           likeBtn.addEventListener('click', () => {
               liked = !liked;
               likeText.textContent = liked ? 'You liked this post' : '';
           });
 
-          // Comment button functionality
+          // Comment button
           commentBtn.addEventListener('click', () => {
               const comment = commentInput.value.trim();
               if(comment) {
