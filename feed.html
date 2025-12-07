@@ -1,65 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Social Book</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SocialBook</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <header class="header">
-    <div class="logo">SocialBook</div>
-    <nav class="top-nav">
-      <a href="index.html">Home</a>
-      <a href="feed.html">Feed</a>
-      <a href="profile.html">Profile</a>
-      <a href="friends.html">Friends</a>
-      <a href="messages.html">Messages</a>
-      <a href="settings.html">Settings</a>
-    </nav>
-  </header>
-      <main class="page-wrapper three-col">
-    <aside class="card">
-      <h3>Shortcuts</h3>
-      <ul>
-        <li>News Feed</li>
-        <li>Groups</li>
-        <li>Events</li>
-        <li>Pages</li>
-      </ul>
-    </aside>
+        <div class="logo">SocialBook</div>
+        <nav class="top-nav">
+            <a href="index.html">Home</a>
+            <a href="feed.html">Feed</a>
+            <a href="profile.html">Profile</a>
+            <a href="friends.html">Friends</a>
+            <a href="messages.html">Messages</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+    </header>
 
-    <section>
-      <div class="card">
-        <h3>Create Post</h3>
-        <textarea rows="3" placeholder="What's on your mind?"></textarea>
-        <button>Post</button>
-      </div>
+    <main class="page-wrapper three-col">
+        <aside class="card">
+            <h3>Shortcuts</h3>
+            <ul>
+                <li>News Feed</li>
+                <li>Groups</li>
+                <li>Events</li>
+                <li>Pages</li>
+            </ul>
+        </aside>
 
-      <article class="card">
-        <h4>Ankit • <span style="color:black;font-size:15px;">2 hrs ago</span></h4>
-        <p>Enjoying my time on SocialBook! Loving this new look.</p>
-      </article>
+        <section>
+            <div class="card">
+                <h3>Create Post</h3>
+                <textarea rows="3" placeholder="What's on your mind?"></textarea>
+                <button>Post</button>
+            </div>
 
-      <article class="card">
-        <h4>Shivam • <span style="color:black;font-size:15px">5 hrs ago</span></h4>
-        <p>Just started learning HTML and CSS. This SocialBook project is fun!</p>
-      </article>
-    </section>
+            <article class="card post">
+                <h4>Ankit • <span class="time">2 hrs ago</span></h4>
+                <p>Enjoying my time on SocialBook! Loving this new look.</p>
+                <button class="likeBtn">Like</button>
+                <p class="likeText"></p>
 
-    <aside class="card">
-      <h3>Friend Suggestions</h3>
-      <p>People you may know</p>
-      <p>Ravi Kumar <button class="btn">Add Friend</button></p>
-      <p>Surya kumar <button class="btn">Add Friend</button></p>
-    </aside>
-  </main>
-  <footer class="footer">
-    <p>© 2025 SocialBook • A simple Facebook-style project by [Sankalp Tripathi]</p>
-  </footer>
+                <input type="text" class="commentInput" placeholder="Write a comment">
+                <button class="commentBtn">Comment</button>
+                <ul class="commentList"></ul>
+            </article>
 
+            <article class="card post">
+                <h4>Shivam • <span class="time">5 hrs ago</span></h4>
+                <p>Just started learning HTML and CSS. This SocialBook project is fun!</p>
+                <button class="likeBtn">Like</button>
+                <p class="likeText"></p>
+
+                <input type="text" class="commentInput" placeholder="Write a comment">
+                <button class="commentBtn">Comment</button>
+                <ul class="commentList"></ul>
+            </article>
+        </section>
+
+        <aside class="card">
+            <h3>Friend Suggestions</h3>
+            <p>People you may know</p>
+            <p>Ravi Kumar <button class="btn">Add Friend</button></p>
+            <p>Surya Kumar <button class="btn">Add Friend</button></p>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <p>2025 SocialBook - A simple Facebook-style project by [Sankalp Tripathi]</p>
+    </footer>
+
+    <!-- Inline JS -->
+    <script>
+      // Select all posts
+      const posts = document.querySelectorAll('.post');
+
+      posts.forEach(post => {
+          const likeBtn = post.querySelector('.likeBtn');
+          const likeText = post.querySelector('.likeText');
+          const commentBtn = post.querySelector('.commentBtn');
+          const commentInput = post.querySelector('.commentInput');
+          const commentList = post.querySelector('.commentList');
+
+          // Like button functionality
+          let liked = false;
+          likeBtn.addEventListener('click', () => {
+              liked = !liked;
+              likeText.textContent = liked ? 'You liked this post' : '';
+          });
+
+          // Comment button functionality
+          commentBtn.addEventListener('click', () => {
+              const comment = commentInput.value.trim();
+              if(comment) {
+                  const li = document.createElement('li');
+                  li.textContent = comment;
+                  commentList.appendChild(li);
+                  commentInput.value = '';
+              }
+          });
+      });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SocialBook</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="logo">SocialBook</div>
+        <nav class="top-nav">
+            <a href="index.html">Home</a>
+            <a href="feed.html">Feed</a>
+            <a href="profile.html">Profile</a>
+            <a href="friends.html">Friends</a>
+            <a href="messages.html">Messages</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+    </header>
+
+    <main class="page-wrapper three-col">
+        <aside class="card">
+            <h3>Shortcuts</h3>
+            <ul>
+                <li>News Feed</li>
+                <li>Groups</li>
+                <li>Events</li>
+                <li>Pages</li>
+            </ul>
+        </aside>
+
+        <section>
+            <div class="card">
+                <h3>Create Post</h3>
+                <textarea rows="3" placeholder="What's on your mind?"></textarea>
+                <button>Post</button>
+            </div>
+
+            <article class="card post">
+                <h4>Ankit • <span class="time">2 hrs ago</span></h4>
+                <p>Enjoying my time on SocialBook! Loving this new look.</p>
+                <button class="likeBtn">Like</button>
+                <p class="likeText"></p>
+
+                <input type="text" class="commentInput" placeholder="Write a comment">
+                <button class="commentBtn">Comment</button>
+                <ul class="commentList"></ul>
+            </article>
+
+            <article class="card post">
+                <h4>Shivam • <span class="time">5 hrs ago</span></h4>
+                <p>Just started learning HTML and CSS. This SocialBook project is fun!</p>
+                <button class="likeBtn">Like</button>
+                <p class="likeText"></p>
+
+                <input type="text" class="commentInput" placeholder="Write a comment">
+                <button class="commentBtn">Comment</button>
+                <ul class="commentList"></ul>
+            </article>
+        </section>
+
+        <aside class="card">
+            <h3>Friend Suggestions</h3>
+            <p>People you may know</p>
+            <p>Ravi Kumar <button class="btn">Add Friend</button></p>
+            <p>Surya Kumar <button class="btn">Add Friend</button></p>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <p>2025 SocialBook - A simple Facebook-style project by [Sankalp Tripathi]</p>
+    </footer>
+
+    <!-- Inline JS -->
+    <script>
+      // Select all posts
+      const posts = document.querySelectorAll('.post');
+
+      posts.forEach(post => {
+          const likeBtn = post.querySelector('.likeBtn');
+          const likeText = post.querySelector('.likeText');
+          const commentBtn = post.querySelector('.commentBtn');
+          const commentInput = post.querySelector('.commentInput');
+          const commentList = post.querySelector('.commentList');
+
+          // Like button functionality
+          let liked = false;
+          likeBtn.addEventListener('click', () => {
+              liked = !liked;
+              likeText.textContent = liked ? 'You liked this post' : '';
+          });
+
+          // Comment button functionality
+          commentBtn.addEventListener('click', () => {
+              const comment = commentInput.value.trim();
+              if(comment) {
+                  const li = document.createElement('li');
+                  li.textContent = comment;
+                  commentList.appendChild(li);
+                  commentInput.value = '';
+              }
+          });
+      });
+    </script>
 </body>
 </html>
