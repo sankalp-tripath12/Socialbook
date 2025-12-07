@@ -3,48 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Social Book</title>
-  <link rel="stylesheet" href="style.css" />
+    <title>Social Book - Messages</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <header class="header">
-    <div class="logo">SocialBook</div>
-    <nav class="top-nav">
-      <a href="index.html">Home</a>
-      <a href="feed.html">Feed</a>
-      <a href="profile.html">Profile</a>
-      <a href="friends.html">Friends</a>
-      <a href="messages.html">Messages</a>
-      <a href="settings.html">Settings</a>
-    </nav>
-  </header>
-      <main class="page-wrapper two-col">
-    <aside class="card">
-      <h3>Chats</h3>
-      <p><strong>Amit</strong> • Hello!</p>
-      <p><strong>Rahul</strong> • Are you there?</p>
-      <p><strong>Group: Coders</strong> • New assignment</p>
-    </aside>
+        <div class="logo">SocialBook</div>
+        <nav class="top-nav">
+            <a href="index.html">Home</a>
+            <a href="feed.html">Feed</a>
+            <a href="profile.html">Profile</a>
+            <a href="friends.html">Friends</a>
+            <a href="messages.html">Messages</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+    </header>
 
-    <section class="card">
-      <h3>Chat with Ritu</h3>
-      <div style="height:250px; background:#f0f2f5; border-radius:8px; padding:0.5rem; overflow-y:auto;">
-        <p><strong>You:</strong> Hi Ritu!</p>
-        <p><strong>Ritu:</strong> Hey! Working on SocialBook?</p>
-      </div>
+    <main class="page-wrapper two-col">
+        <aside class="card">
+            <h3>Chats</h3>
+            <p><strong>Amit</strong> - Hello!</p>
+            <p><strong>Rahul</strong> - Are you there?</p>
+            <p><strong>Group: Coders</strong> - New assignment</p>
+        </aside>
 
-      <div style="margin-top:0.8rem;">
-        <input type="text" placeholder="Type a message…" />
-        <button>Send</button>
-      </div>
-    </section>
-  </main>
-  <footer class="footer">
-    <p>© 2025 SocialBook • A simple Facebook-style project by [Sankalp Tripathi]</p>
-  </footer>
+        <section class="card">
+            <h3>Chat with Ritu</h3>
+            <div id="chatBox" style="height:250px; background:#f0f2f5; border-radius:8px; padding:0.5rem; overflow-y:auto;">
+                <p><strong>You:</strong> Hi Ritu!</p>
+                <p><strong>Ritu:</strong> Hey! Working on SocialBook?</p>
+            </div>
 
+            <div style="margin-top:0.8rem;">
+                <input type="text" id="messageInput" placeholder="Type a message…" />
+                <button id="sendBtn">Send</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>2025 SocialBook - A simple Facebook-style project by [Sankalp Tripathi]</p>
+    </footer>
+
+    <script>
+        const sendBtn = document.getElementById('sendBtn');
+        const messageInput = document.getElementById('messageInput');
+        const chatBox = document.getElementById('chatBox');
+
+        sendBtn.addEventListener('click', () => {
+            const message = messageInput.value.trim();
+            if(message !== '') {
+                const p = document.createElement('p');
+                p.innerHTML = `<strong>You:</strong> ${message}`;
+                chatBox.appendChild(p);
+                messageInput.value = ''; 
+                chatBox.scrollTop = chatBox.scrollHeight; 
+            }
+        });
+
+
+        messageInput.addEventListener('keypress', (e) => {
+            if(e.key === 'Enter') {
+                sendBtn.click();
+            }
+        });
+    </script>
 </body>
 </html>
