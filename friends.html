@@ -1,44 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Social Book</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Social Book</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <header class="header">
-    <div class="logo">SocialBook</div>
-    <nav class="top-nav">
-      <a href="index.html">Home</a>
-      <a href="feed.html">Feed</a>
-      <a href="profile.html">Profile</a>
-      <a href="friends.html">Friends</a>
-      <a href="messages.html">Messages</a>
-      <a href="settings.html">Settings</a>
-    </nav>
-  </header>
-      <main class="page-wrapper two-col">
-    <section class="card">
-      <h2>Your Friends</h2>
-      <p>Friend 1 • 5 mutual friends</p>
-      <p>Friend 2 • 2 mutual friends</p>
-      <p>Friend 3 • 10 mutual friends</p>
-    </section>
+        <div class="logo">SocialBook</div>
+        <nav class="top-nav">
+            <a href="index.html">Home</a>
+            <a href="feed.html">Feed</a>
+            <a href="profile.html">Profile</a>
+            <a href="friends.html">Friends</a>
+            <a href="messages.html">Messages</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+    </header>
 
-    <section class="card">
-      <h2>People You May Know</h2>
-      <p>New User 1 <button class="btn">Add Friend</button></p>
-      <p>New User 2 <button class="btn">Add Friend</button></p>
-      <p>New User 3 <button class="btn">Add Friend</button></p>
-    </section>
-  </main>
-  <footer class="footer">
-    <p>© 2025 SocialBook • A simple Facebook-style project by [Sankalp Tripathi]</p>
-  </footer>
+    <main class="page-wrapper two-col">
+        <section class="card">
+            <h2>Your Friends</h2>
+            <p>Friend 1 - 5 mutual friends</p>
+            <p>Friend 2 - 2 mutual friends</p>
+            <p>Friend 3 - 10 mutual friends</p>
+        </section>
 
+        <section class="card">
+            <h2>People You May Know</h2>
+            <p>New User 1 <button class="addFriendBtn">Add Friend</button></p>
+            <p>New User 2 <button class="addFriendBtn">Add Friend</button></p>
+            <p>New User 3 <button class="addFriendBtn">Add Friend</button></p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>2025 SocialBook - A simple Facebook-style project by [Sankalp Tripathi]</p>
+    </footer>
+
+    <!-- Inline JS -->
+    <script>
+        // Select all Add Friend buttons
+        const addButtons = document.querySelectorAll('.addFriendBtn');
+
+        addButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.textContent = 'Friend Added'; // Change text
+                button.disabled = true; // Disable button
+            });
+        });
+    </script>
 </body>
 </html>
