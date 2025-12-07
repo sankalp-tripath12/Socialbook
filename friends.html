@@ -1,55 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Book</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header class="header">
-        <div class="logo">SocialBook</div>
-        <nav class="top-nav">
-            <a href="index.html">Home</a>
-            <a href="feed.html">Feed</a>
-            <a href="profile.html">Profile</a>
-            <a href="friends.html">Friends</a>
-            <a href="messages.html">Messages</a>
-            <a href="settings.html">Settings</a>
-        </nav>
-    </header>
 
-    <main class="page-wrapper two-col">
-        <section class="card">
-            <h2>Your Friends</h2>
-            <p>Friend 1 - 5 mutual friends</p>
-            <p>Friend 2 - 2 mutual friends</p>
-            <p>Friend 3 - 10 mutual friends</p>
-        </section>
+  <header class="header">
+    <div class="logo">SocialBook</div>
+    <button id="menuToggle">☰</button>
 
-        <section class="card">
-            <h2>People You May Know</h2>
-            <p>New User 1 <button class="addFriendBtn">Add Friend</button></p>
-            <p>New User 2 <button class="addFriendBtn">Add Friend</button></p>
-            <p>New User 3 <button class="addFriendBtn">Add Friend</button></p>
-        </section>
-    </main>
+    <nav class="top-nav">
+      <a href="index.html">Home</a>
+      <a href="feed.html">Feed</a>
+      <a href="profile.html">Profile</a>
+      <a href="friends.html">Friends</a>
+      <a href="messages.html">Messages</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </header>
 
-    <footer class="footer">
-        <p>2025 SocialBook - A simple Facebook-style project by [Sankalp Tripathi]</p>
-    </footer>
+  <main class="page-wrapper two-col">
+    <section>
+      <h1>Welcome to SocialBook</h1>
+      <p>Connect with friends and the world around you.</p>
 
-    <!-- Inline JS -->
-    <script>
-        // Select all Add Friend buttons
-        const addButtons = document.querySelectorAll('.addFriendBtn');
+      <button id="notifyBtn">Show Notification</button>
 
-        addButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                button.textContent = 'Friend Added'; // Change text
-                button.disabled = true; // Disable button
-            });
-        });
-    </script>
+      <ul>
+        <li>Share your status and photos</li>
+        <li>Chat with your friends</li>
+        <li>Discover new people</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Log In</h2>
+      <form id="loginForm">
+        <label>Email or Phone</label>
+        <input type="text" placeholder="Enter email or phone">
+
+        <label>Password</label>
+        <input type="password" placeholder="Enter password">
+
+        <button type="submit">Log In</button>
+
+        <p style="text-align:center; margin-top:0.8rem;">
+          <a href="#" style="color:#1877f2; text-decoration:none;">Forgot password?</a>
+        </p>
+      </form>
+
+      <hr>
+
+      <div style="text-align:center; margin-top:1rem;">
+        <a href="signup.html" class="btn" style="background:rgb(106, 191, 14);">Create New Account</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>2025 SocialBook - A simple project by Sankalp Tripathi</p>
+  </footer>
+
+  
+  <script>
+    // Menu toggle functionality
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.querySelector('.top-nav');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('show'); // CSS should hide/show nav when .show class is added
+    });
+
+    // Notification button
+    const notifyBtn = document.getElementById('notifyBtn');
+    notifyBtn.addEventListener('click', () => {
+      alert('You have 3 new notifications!');
+    });
+
+    //Login form
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault(); // Prevent page refresh
+      alert('Logged In!');
+    });
+  </script>
 </body>
 </html>
