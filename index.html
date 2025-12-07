@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Social Book</title>
-  <link rel="stylesheet" href="style.css" />
+    <title>Social Book</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header class="header">
+
+  <header class="header">
     <div class="logo">SocialBook</div>
+    <button id="menuToggle">☰</button>
+
     <nav class="top-nav">
       <a href="index.html">Home</a>
       <a href="feed.html">Feed</a>
@@ -22,10 +21,14 @@
       <a href="settings.html">Settings</a>
     </nav>
   </header>
-      <main class="page-wrapper two-col">
+
+  <main class="page-wrapper two-col">
     <section>
       <h1>Welcome to SocialBook</h1>
-      <p>Connect with friends and the world around you in a clean, simple interface.</p>
+      <p>Connect with friends and the world around you.</p>
+
+      <button id="notifyBtn">Show Notification</button>
+
       <ul>
         <li>Share your status and photos</li>
         <li>Chat with your friends</li>
@@ -35,7 +38,7 @@
 
     <section class="card">
       <h2>Log In</h2>
-      <form>
+      <form id="loginForm">
         <label>Email or Phone</label>
         <input type="text" placeholder="Enter email or phone">
 
@@ -56,10 +59,33 @@
       </div>
     </section>
   </main>
+
   <footer class="footer">
-    <p>© 2025 SocialBook • A simple Facebook-style project by [Sankalp Tripathi] <div ></div></p>
+    <p>2025 SocialBook - A simple project by Sankalp Tripathi</p>
   </footer>
 
-    
+  
+  <script>
+    // Menu toggle 
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.querySelector('.top-nav');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+
+    // Notification 
+    const notifyBtn = document.getElementById('notifyBtn');
+    notifyBtn.addEventListener('click', () => {
+      alert('You have 3 new notifications!');
+    });
+
+    // Login
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault(); 
+      alert('Logged In!');
+    });
+  </script>
 </body>
 </html>
